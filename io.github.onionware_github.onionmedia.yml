@@ -2,7 +2,7 @@ app-id: io.github.onionware_github.onionmedia
 runtime: org.freedesktop.Platform
 runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
-command: "OnionMedia X"
+command: "OnionMedia_X"
   
 finish-args:
   - --filesystem=host
@@ -19,9 +19,14 @@ modules:
       - cp -r . /app
     sources:
       - type: archive
-        url: https://github.com/onionware-github/OnionMedia-X/releases/download/2.0.0.1/flatpak-resources.zip
-        sha256: 40cc00faabcc49ea6e13061d96bd57e1da3344562b8f6c6df57cf16878187694
+        url: https://github.com/onionware-github/OnionMedia-X/releases/download/2.0.0.2/flatpak-resources.zip
+        sha256: 8e846db8efb8051de690dc1cb7ad2bc8ae6c524d3c35b28a8c76227df3f8d1ed
         dest-filename: flatpak-resources.zip
+        x-checker-data:
+          - type: json
+            url: https://api.github.com/repos/onionware-github/OnionMedia-X/releases/latest
+            version-query: .tag_name
+            url-query: .assets[] | select(.name==\"flatpak-resources.zip\") | .browser_download_url
         
   - name: OnionMedia
     buildsystem: simple
@@ -30,9 +35,14 @@ modules:
       - chmod -R +x /app/bin
     sources:
       - type: archive
-        url: https://github.com/onionware-github/OnionMedia-X/releases/download/2.0.0.1/OnionMediaX_2.0.0.1-linux.X64.zip
-        sha256: 98ecd7846d26a1280b8ff21e85cfeb9d8964693cd493221f9c7a825dabb2935a
+        url: https://github.com/onionware-github/OnionMedia-X/releases/download/2.0.0.2/onionware-onionmedia_x-x64.zip
+        sha256: d842f0f41ed4fa473cb1e5571a3e7f97df66bac4ff7700d5c14c39895f85c98d
         dest-filename: publish.zip
+        x-checker-data:
+          - type: json
+            url: https://api.github.com/repos/onionware-github/OnionMedia-X/releases/latest
+            version-query: .tag_name
+            url-query: .assets[] | select(.name==\"onionware-onionmedia_x-x64.zip\") | .browser_download_url
         
     cleanup:
       - '*.pdb'
