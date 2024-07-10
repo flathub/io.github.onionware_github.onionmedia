@@ -23,10 +23,10 @@ modules:
         sha256: 8e846db8efb8051de690dc1cb7ad2bc8ae6c524d3c35b28a8c76227df3f8d1ed
         dest-filename: flatpak-resources.zip
         x-checker-data:
-          - type: json
-            url: https://api.github.com/repos/onionware-github/OnionMedia-X/releases/latest
-            version-query: .tag_name
-            url-query: .assets[] | select(.name==\"flatpak-resources.zip\") | .browser_download_url
+          type: json
+          url: https://api.github.com/repos/onionware-github/OnionMedia-X/releases/latest
+          version-query: .tag_name
+          url-query: .assets[] | select(.name==\"flatpak-resources.zip\") | .browser_download_url
         
   - name: OnionMedia
     buildsystem: simple
@@ -39,10 +39,10 @@ modules:
         sha256: d842f0f41ed4fa473cb1e5571a3e7f97df66bac4ff7700d5c14c39895f85c98d
         dest-filename: publish.zip
         x-checker-data:
-          - type: json
-            url: https://api.github.com/repos/onionware-github/OnionMedia-X/releases/latest
-            version-query: .tag_name
-            url-query: .assets[] | select(.name==\"onionware-onionmedia_x-x64.zip\") | .browser_download_url
+          type: json
+          url: https://api.github.com/repos/onionware-github/OnionMedia-X/releases/latest
+          version-query: .tag_name
+          url-query: .assets[] | select(.name==\"onionware-onionmedia_x-x64.zip\") | .browser_download_url
         
     cleanup:
       - '*.pdb'
