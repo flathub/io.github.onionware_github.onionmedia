@@ -19,8 +19,8 @@ modules:
       - cp -r . /app
     sources:
       - type: archive
-        url: https://github.com/onionware-github/OnionMedia-X/releases/download/2.0.0.2/flatpak-resources.zip
-        sha256: 8e846db8efb8051de690dc1cb7ad2bc8ae6c524d3c35b28a8c76227df3f8d1ed
+        url: https://github.com/onionware-github/OnionMedia-X/releases/download/2.0.0.2B/flatpak-resources.zip
+        sha256: c8e01fd2e05f7add0885564a482beb91669aa432ff5739a302d6ee4a03a3aa42
         dest-filename: flatpak-resources.zip
         x-checker-data:
           type: json
@@ -35,8 +35,8 @@ modules:
       - chmod -R +x /app/bin
     sources:
       - type: archive
-        url: https://github.com/onionware-github/OnionMedia-X/releases/download/2.0.0.2/onionware-onionmedia_x-x64.zip
-        sha256: d842f0f41ed4fa473cb1e5571a3e7f97df66bac4ff7700d5c14c39895f85c98d
+        url: https://github.com/onionware-github/OnionMedia-X/releases/download/2.0.0.2B/onionware-onionmedia_x-x64.zip
+        sha256: 9049109321455977d767ae578ca73bd1803603940d3189ceec23a905ab2c3064
         dest-filename: publish.zip
         x-checker-data:
           type: json
