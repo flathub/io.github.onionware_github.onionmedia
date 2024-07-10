@@ -20,7 +20,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/onionware-github/OnionMedia-X/releases/download/2.0.0.2B/flatpak-resources.zip
-        sha256: c8e01fd2e05f7add0885564a482beb91669aa432ff5739a302d6ee4a03a3aa42
+        sha256: 2f87b0dc41d3fac7e685d7ff3504d8dc27ca9d6e2fde348a6deedb23c69f458b
         dest-filename: flatpak-resources.zip
         x-checker-data:
           type: json
