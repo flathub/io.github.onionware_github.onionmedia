@@ -2,8 +2,12 @@ app-id: io.github.onionware_github.onionmedia
 runtime: org.freedesktop.Platform
 runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
-command: "OnionMedia_X"
-  
+command: OnionMedia_X
+
+build-options:
+  no-debuginfo: true
+  no-debuginfo-compression: true
+
 finish-args:
   - --filesystem=host
   - --share=network
