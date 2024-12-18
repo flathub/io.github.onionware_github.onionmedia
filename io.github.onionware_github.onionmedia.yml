@@ -12,6 +12,7 @@ finish-args:
   - --filesystem=host
   - --share=network
   - --share=ipc
+  - --talk-name=org.freedesktop.login1
   - --talk-name=org.freedesktop.Notifications
   - --socket=x11
   - --device=all
@@ -30,7 +31,7 @@ modules:
           type: json
           url: https://api.github.com/repos/onionware-github/OnionMedia-X/releases/latest
           version-query: .tag_name
-          url-query: .assets[] | select(.name==\"flatpak-resources.zip\") | .browser_download_url
+          url-query: ".assets[] | select(.name==\"flatpak-resources.zip\") | .browser_download_url"
         
   - name: OnionMedia
     buildsystem: simple
@@ -46,7 +47,7 @@ modules:
           type: json
           url: https://api.github.com/repos/onionware-github/OnionMedia-X/releases/latest
           version-query: .tag_name
-          url-query: .assets[] | select(.name==\"onionware-onionmedia_x-x64.zip\") | .browser_download_url
+          url-query: ".assets[] | select(.name==\"onionware-onionmedia_x-x64.zip\") | .browser_download_url"
         
     cleanup:
       - '*.pdb'
